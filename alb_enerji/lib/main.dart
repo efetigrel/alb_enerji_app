@@ -9,9 +9,9 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: HexColor("#ffffff"),
+        backgroundColor: HexColor("#DAFFFB"),
         appBar: AppBar(
-          backgroundColor: HexColor("#1e2b50"),
+          backgroundColor: HexColor("#04364A"),
           title: const Text("Alb Enerji"),
           centerTitle: true,
         ),
@@ -20,7 +20,8 @@ void main() {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Image(
-                image: AssetImage("lib/images/alb_logo.png"),
+                width: 150,
+                image: AssetImage("lib/images/alb_icon.png"),
               ),
               buildText("Alb Enerji", 62),
               buildText("A Bright İdea", 24),
@@ -40,14 +41,15 @@ Widget buildText(String text, double fontSize) {
     text,
     style: GoogleFonts.poppins(
       fontSize: fontSize,
-      color: HexColor("#1e2b50"),
+      color: HexColor("#04364A"),
+      fontWeight: FontWeight.w700,
     ),
   );
 }
 
 Widget buildDivider() {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 50),
+    padding: EdgeInsets.symmetric(horizontal: 118, vertical: 30),
     child: Divider(
       color: HexColor("#1e2b50"),
       thickness: 1,
@@ -57,13 +59,28 @@ Widget buildDivider() {
 
 Widget buildRow(IconData icon, String text) {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 50),
+    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
     child: Container(
-      color: HexColor("#1e2b50"),
+      decoration: BoxDecoration(
+        color: HexColor("#64CCC5"),
+        borderRadius: BorderRadius.circular(10),
+      ),
       padding: EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Icon(icon), Text(text)],
+        children: [
+          Icon(icon),
+          SizedBox(
+            width: 20,
+          ),
+          Text(
+            text,
+            style: GoogleFonts.poppins(
+              color: HexColor("#04364A"),
+              fontWeight: FontWeight.w500,
+            ),
+          )
+        ],
       ),
     ),
   );
